@@ -1,0 +1,20 @@
+[package]
+name = "zk-verifier"
+version = "0.1.0"
+edition = "2021"
+authors = ["Devcyprian <devcyprian@gmail.com>"]
+description = "Zero-knowledge proof verifier contract for Stellar Soroban"
+license = "MIT"
+repository = "https://github.com/soroban-zk-toolkit/soroban-zk-contracts"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+soroban-sdk = { workspace = true }
+
+[dev-dependencies]
+soroban-sdk = { workspace = true, features = ["testutils"] }
+
+[features]
+testutils = ["soroban-sdk/testutils"]
