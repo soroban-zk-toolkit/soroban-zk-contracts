@@ -95,3 +95,8 @@ impl ZkVerifierContract {
         Err(VerifierError::Unauthorized)
     }
 }
+
+// Helper to extend storage TTL on entry points
+pub fn bump_instance_ttl(e: &soroban_sdk::Env) {
+    e.storage().instance().extend_ttl(100, 1000);
+}
